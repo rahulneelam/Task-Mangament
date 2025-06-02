@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "Task-management",
+      name: "project-management",
       script: "npm",
       args: "run dev",
       env: {

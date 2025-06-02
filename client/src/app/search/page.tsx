@@ -6,7 +6,6 @@ import TaskCard from "@/components/TaskCard";
 import UserCard from "@/components/UserCard";
 import { useSearchQuery } from "@/state/api";
 import { debounce } from "lodash";
-
 import React, { useEffect, useState } from "react";
 
 const Search = () => {

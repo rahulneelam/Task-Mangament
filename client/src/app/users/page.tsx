@@ -8,12 +8,17 @@ import {
   GridColDef,
   GridToolbarContainer,
   GridToolbarExport,
-  GridToolbarQuickFilter,
+  GridToolbarFilterButton,
 } from "@mui/x-data-grid";
 import Image from "next/image";
 import { dataGridClassNames, dataGridSxStyles } from "@/lib/utils";
 
-
+const CustomToolbar = () => (
+  <GridToolbarContainer className="toolbar flex gap-2">
+    <GridToolbarFilterButton />
+    <GridToolbarExport />
+  </GridToolbarContainer>
+);
 
 const columns: GridColDef[] = [
   { field: "userId", headerName: "ID", width: 100 },
@@ -26,7 +31,7 @@ const columns: GridColDef[] = [
       <div className="flex h-full w-full items-center justify-center">
         <div className="h-9 w-9">
           <Image
-            src={`/${params.value}`}
+            src={`https://pm-s3-images.s3.us-east-2.amazonaws.com/${params.value}`}
             alt={params.row.username}
             width={100}
             height={50}
@@ -54,12 +59,8 @@ const Users = () => {
           columns={columns}
           getRowId={(row) => row.userId}
           pagination
-          showToolbar
-          slotProps={{
-            toolbar: {
-              showQuickFilter: true,
-              showExport: true,
-            },
+          slots={{
+            toolbar: CustomToolbar,
           }}
           className={dataGridClassNames}
           sx={dataGridSxStyles(isDarkMode)}

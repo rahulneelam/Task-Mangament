@@ -9,24 +9,11 @@ import {
   GridToolbarContainer,
   GridToolbarExport,
   GridToolbarFilterButton,
-  GridToolbarQuickFilter,
 } from "@mui/x-data-grid";
 import { dataGridClassNames, dataGridSxStyles } from "@/lib/utils";
 
 const CustomToolbar = () => (
-  <GridToolbarContainer 
-    className="toolbar flex gap-2"
-    sx={{
-      padding: '8px',
-      borderBottom: '1px solid #e0e0e0',
-      backgroundColor: 'background.paper'
-    }}
-  >
-    <GridToolbarQuickFilter 
-      debounceMs={500}
-      placeholder="Search teams..."
-      sx={{ minWidth: 200 }}
-    />
+  <GridToolbarContainer className="toolbar flex gap-2">
     <GridToolbarFilterButton />
     <GridToolbarExport />
   </GridToolbarContainer>
