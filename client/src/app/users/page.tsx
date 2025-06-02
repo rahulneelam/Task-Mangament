@@ -13,23 +13,7 @@ import {
 import Image from "next/image";
 import { dataGridClassNames, dataGridSxStyles } from "@/lib/utils";
 
-const CustomToolbar = () => (
-  <GridToolbarContainer 
-    className="toolbar flex gap-2"
-    sx={{ 
-      padding: '8px',
-      borderBottom: '1px solid #e0e0e0',
-      backgroundColor: 'background.paper'
-    }}
-  >
-    <GridToolbarQuickFilter 
-      debounceMs={500}
-      placeholder="Search users..."
-      sx={{ minWidth: 200 }}
-    />
-    <GridToolbarExport />
-  </GridToolbarContainer>
-);
+
 
 const columns: GridColDef[] = [
   { field: "userId", headerName: "ID", width: 100 },
